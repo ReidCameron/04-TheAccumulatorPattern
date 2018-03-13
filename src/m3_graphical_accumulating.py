@@ -188,15 +188,16 @@ def draw_lines(n, point, window):
 
     point2 = rg.Point(0,0)
     point2.x = point.x + 100
-    point2.y = point.y
+    point2.y = point.y - 100 #First Method
+    # point2.y = point.y #Second Method
 
 
     for k in range(n):
-        point2.move_to(point2.x, point.y + (k*200/(n-1)) - 100)
+        # point2.move_to(point2.x, point.y - 100 + (k*200/(n-1)))#Second Method
         line = rg.Line(point,point2)
+        point2.move_by(0, 200 / (n - 1)) #First Method
         line.attach_to(window)
         window.render()
-
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
